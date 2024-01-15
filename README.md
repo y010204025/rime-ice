@@ -1,7 +1,55 @@
+## 各平台rime输入法
+| **系统平台** | **输入法名称** | **来源链接** | **备注说明** |
+| :--: | :--: | :--: | :--: |
+| **macOS** | [鼠须管Squirrel](https://github.com/LEOYoon-Tsaw/squirrel/releases) | https://github.com/LEOYoon-Tsaw/squirrel/releases | 更多适应macOS的更新 |
+| **Windows** | [小狼毫Weasel](https://rime.im/) | https://rime.im/ | 官方更新站点 |
+| **Linux** | [fcitx5-rime](https://github.com/fcitx/fcitx5-rime) [ibus-rime](https://github.com/rime/ibus-rime) | https://github.com/fcitx/fcitx5-rime https://github.com/rime/ibus-rime , | 建议使用 Linux 对应包管理工具安装 |
+| **Android** | [fcitx5-Android](https://github.com/fcitx5-android/fcitx5-android) 5 | https://github.com/fcitx5-android/fcitx5-android | 建议从 github 或者酷安市场安装 |
+| **IOS** | [仓输入法Hamster](https://github.com/imfuxiao/Hamster) | https://github.com/imfuxiao/Hamster | 呃，iOS 应用商店安装 |
+
+
+## 说明：
 个人修改自用版(mac版)，[lufs的reimu主题](https://github.com/LufsX/rime)+[雾凇拼音的词库配置](https://github.com/iDvel/rime-ice)，另外将候选词数量调整为10个。
 其他的尝试看怎么能不同更新，毕竟有人维护的才更具有生命力，另外配合[落霞文楷字体](https://github.com/lxgw/LxgwWenKai)食用更香。
+如果有需要更新的，请提醒我。
 
-配置页面参照：[lufs'blog](https://blog.isteed.cc/post/rime-2022/)，[雾凇拼音配置](https://dvel.me/posts/rime-ice/)
+## 配置页面参照：
+
+`macOS：`[lufs'blog](https://blog.isteed.cc/post/rime-2022/)
+
+`Windows：`[雾凇拼音配置](https://dvel.me/posts/rime-ice/)
+
+`Linux：`参照以上两个，另外Linux如果出现不能输入的情况:
+
+添加环境变量：
+- `iBus：`
+ [参考来源](https://wiki.archlinuxcn.org/wiki/IBus)
+        如果你在输入中文时遇到问题，检查你的 locale 设置。比如在香港，export LANG=zh_HK.utf8。
+        如需 ibus 随 gnome 启动，把这些加入 ~/.profile 后重启 gnome。
+    
+           export GTK_IM_MODULE=ibus
+           export XMODIFIERS=@im=ibus
+           export QT_IM_MODULE=ibus
+           ibus-daemon -d -x
+
+- `fcitx5-rime:`
+   [参考来源](https://wiki.archlinuxcn.org/wiki/Fcitx5)
+        编辑 /etc/environment 并添加以下几行，然后重新登录[1]：
+        
+            GTK_IM_MODULE=fcitx
+            QT_IM_MODULE=fcitx
+            XMODIFIERS=@im=fcitx
+            SDL_IM_MODULE=fcitx
+            GLFW_IM_MODULE=ibus
+
+gnome桌面环境特别说明：
+
+- 针对gnome桌面再wayland模式下，QQ和某些情况下，输入法失效及不显示状态栏输入法状态的，需安装[Input Method Panel](https://extensions.gnome.org/extension/261/kimpanel/)，
+- 针对候选词横排或纵行调整失效的，可安装[ibus-tweaker](https://extensions.gnome.org/extension/2820/ibus-tweaker/)即可调整，以上两条，针对ibus框架下的其他输入法也有效果。
+
+
+## 本配置文件配置示意
+![macOS输入法配置示意](./image/macOS输入法配置示意.jpg)
 
 
 
