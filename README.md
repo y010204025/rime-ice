@@ -1,3 +1,10 @@
+个人修改自用版(mac版)，[lufs的reimu主题](https://github.com/LufsX/rime)+[雾凇拼音的词库配置](https://github.com/iDvel/rime-ice)，另外将候选词数量调整为10个。
+其他的尝试看怎么能不同更新，毕竟有人维护的才更具有生命力，另外配合[落霞文楷字体](https://github.com/lxgw/LxgwWenKai)食用更香。
+
+配置页面参照：[lufs'blog](https://blog.isteed.cc/post/rime-2022/)，[雾凇拼音配置](https://dvel.me/posts/rime-ice/)
+
+
+
 # 雾凇拼音
 
 ![demo](./others/demo.webp)
