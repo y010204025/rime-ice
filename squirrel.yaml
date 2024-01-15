@@ -380,7 +380,7 @@ preset_color_schemes:
     hilited_comment_text_color: 0x8144C2 #Lab 50, 65, -5
     hilited_text_color: 0x2C8BAE #Lab 60, 10, 65
 
-reimu:
+  reimu:
     name: "灵梦／Reimu"
     author: "Lufs X <i@isteed.cc>"
     font_face: "LXGWWenKai-Regular, PingFangSC"
