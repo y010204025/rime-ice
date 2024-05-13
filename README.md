@@ -48,6 +48,17 @@ gnome桌面环境特别说明：
 - 针对gnome桌面再wayland模式下，QQ和某些情况下，输入法失效及不显示状态栏输入法状态的，fcitx5需安装[Input Method Panel](https://extensions.gnome.org/extension/261/kimpanel/)，
 - 针对候选词横排或纵行调整失效的，可安装[ibus-tweaker](https://extensions.gnome.org/extension/2820/ibus-tweaker/)即可调整，以上两条，针对ibus框架下的其他输入法也有效果。
 
+KDE桌面[Wayland](https://blog.merrkry.com/posts/2024-03-24-kde-fcitx5/)环境下随机上字符解决方式：
+
+- 在：/etc/environment 文件中，仅增加以下字符，别的关于输入法的别加。
+  ```
+  XMODIFIERS=@im=fcitx
+  ```
+
+- QQ或chromium输入异常，在/usr/share/applications/qq.desktop：  Exec=后命令后增加以下字符：
+```
+--enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime
+```
 
 ## 本配置文件配置示意
 ![macOS输入法配置示意](_macOS鼠须管配置示意.wbm)
