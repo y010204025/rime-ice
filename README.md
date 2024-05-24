@@ -149,9 +149,11 @@ KDE桌面[Wayland](https://blog.merrkry.com/posts/2024-03-24-kde-fcitx5/)环境�
 
 ### 手动安装
 
-将仓库所有文件复制粘贴到配置目录，重新部署。
+您可以将仓库打包下载，或者整体 clone 后，将所有文件复制粘贴到配置目录，重新部署。
 
 更新词库，手动覆盖 `cn_dicts` `en_dcits` `opencc` 三个文件夹。
+
+您也可以前往 [Release](https://github.com/iDvel/rime-ice/releases) 界面，下载特定版本的词典文件（具体描述见 Release 说明），覆盖配置目录的对应文件。
 
 ### 东风破 [plum](https://github.com/rime/plum)
 
@@ -200,6 +202,14 @@ bash rime-install iDvel/rime-ice:others/recipes/config:schema=mspy
 bash rime-install iDvel/rime-ice:others/recipes/config:schema=sogou
 bash rime-install iDvel/rime-ice:others/recipes/config:schema=abc
 bash rime-install iDvel/rime-ice:others/recipes/config:schema=ziguang
+```
+
+℞ 下载特定版本的配置
+
+在仓库后加 `@tag` 即可，例如：
+
+```sh
+bash rime-install iDvel/rime-ice@2024.05.21:others/recipes/full
 ```
 
 ### 仓输入法 [Hamster](https://github.com/imfuxiao/Hamster)
