@@ -3,7 +3,7 @@
 | :--: | :--: | :--: | :--: |:--: |
 | **macOS** | [鼠须管Squirrel](https://github.com/LEOYoon-Tsaw/squirrel/releases) | https://github.com/LEOYoon-Tsaw/squirrel/releases | 更多适应macOS的更新 |~/Library/Rime/squirrel.yaml|
 | **Windows** | [小狼毫Weasel](https://rime.im/) | https://rime.im/ | 官方更新站点 |%APPDATA%/Rime/weasel.yaml|
-| **Linux** | [fcitx5-rime](https://github.com/fcitx/fcitx5-rime) [ibus-rime](https://github.com/rime/ibus-rime) | https://github.com/fcitx/fcitx5-rime <br>https://github.com/rime/ibus-rime , | 建议使用 Linux 对应包管理工具安装 |~/.config/ibus/rime/ibus_rime.yaml <br> ~/.local/share/fcitx5/rime/名称暂缺|
+| **Linux** | [fcitx5-rime](https://github.com/fcitx/fcitx5-rime) [ibus-rime](https://github.com/rime/ibus-rime) | https://github.com/fcitx/fcitx5-rime <br>https://github.com/rime/ibus-rime , | 建议使用 Linux 对应包管理工具安装 |~/.config/ibus/rime/ibus_rime.yaml <br> ~/.local/share/fcitx5/rime/default。yaml|
 | **Android** | [fcitx5-Android](https://github.com/fcitx5-android/fcitx5-android)| https://github.com/fcitx5-android/fcitx5-android | 建议从 github 或者酷安市场安装 |参照软件内说明|
 | **IOS** | [仓输入法Hamster](https://github.com/imfuxiao/Hamster) | https://github.com/imfuxiao/Hamster | 呃，iOS 应用商店安装 |参照软件内说明，可用wifi上传配置文件|
 
@@ -21,6 +21,8 @@
 
 `Linux：`[薄荷拼音配置](https://www.mintimate.cc/zh/demo/)
 参照以上三个，主要是可以蹭配置方案，熟悉后再自己修改。另外Linux如果出现不能输入的情况:
+linux下面，应该读取的是default.yaml，外观主题并没有像Squirrel.yaml和Weasel.yaml一样的主题配置文件，而是通过fcitx5或者ibus管理样式，可能是因为太乱了吧。
+以上基于我在Linux系统下的体验得出，如果有别的，可以提供给我。
 
 添加环境变量：
 - `iBus：`
