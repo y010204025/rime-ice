@@ -79,7 +79,7 @@ KDE桌面[Wayland](https://blog.merrkry.com/posts/2024-03-24-kde-fcitx5/)环境�
 
 这里是 Rime 的一份配置仓库，用户需要下载各平台对应的前端，并将此配置应用到配置目录。
 
-雾凇拼音提供了一套开箱即用的完整配置，包含了输入方案（全拼、双拼）、长期维护的词库及各项扩展功能。
+雾凇拼音提供了一套开箱即用的完整配置，包含输入方案（全拼、常见双拼）、长期维护的开源词库及各项扩展功能。
 
 详细介绍：[Rime 配置：雾凇拼音](https://dvel.me/posts/rime-ice/)
 
@@ -93,33 +93,40 @@ KDE桌面[Wayland](https://blog.merrkry.com/posts/2024-03-24-kde-fcitx5/)环境�
 
 - 简体 | 全拼 | 双拼
 - 主要功能
-    -   [melt_eng](https://github.com/tumuyan/rime-melt) 英文输入（@tumuyan | [Apache 2.0](https://github.com/tumuyan/rime-melt/blob/master/LICENSE)）
+    -   轻量的英文输入，支持中英混输
     -   [优化英文输入体验](https://dvel.me/posts/make-rime-en-better/)
-    -   [部件拆字方案](https://github.com/mirtlecn/rime-radical-pinyin) 反查、辅码（@mirtlecn | [CC BY-SA 4.0](https://github.com/mirtlecn/rime-radical-pinyin/blob/master/LICENSE)）
+    -   拆字反查（<kbd>uU</kbd>+拼音），拆字辅码（拼音+<kbd>`</kbd>+拆字辅码）
     -   自整理的 Emoji
-    -   [以词定字](https://github.com/BlindingDark/rime-lua-select-character)（@BlindingDark | [LGPL 3.0](https://github.com/BlindingDark/rime-lua-select-character/blob/master/LICENSE)）
-    -   [长词优先](https://github.com/tumuyan/rime-melt/blob/master/lua/melt.lua)（@tumuyan | [Apache 2.0](https://github.com/tumuyan/rime-melt/blob/master/LICENSE)）
-    -   [Unicode](https://github.com/shewer/librime-lua-script/blob/main/lua/component/unicode.lua)（@shewer | [MIT](https://github.com/shewer/librime-lua-script/blob/main/lua/component/unicode.lua)）
-    -   [数字、人民币大写](https://github.com/yanhuacuo/98wubi/blob/master/lua/number.lua)（@98wubi）
-    -   日期、时间、星期、[农历](https://github.com/boomker/rime-fast-xhup)（@boomker | [LGPL 3.0](https://github.com/boomker/rime-fast-xhup/blob/master/LICENSE)）
+    -   以词定字（左右中括号：<kbd>[</kbd>、<kbd>]</kbd>）
+    -   长词优先
+    -   Unicode（<kbd>U</kbd>+Unicode 码位）
+    -   数字、人民币大写（<kbd>R</kbd>+数字）
+    -   日期、时间、星期（详见方案 `/date_translator` 节点）
+    -   农历（转写：<kbd>N</kbd>+八位数字；获取当前农历：全拼<kbd>nl</kbd>，双拼<kbd>lunar</kbd>）
     -   常见错音错字提示
-    -   置顶候选项
-    -   所有标点符号直接上屏，/ 模式改为 v 模式，/ 直接上屏
-    -   增加了许多拼音纠错
+    -   置顶候选项（详见方案 `/pin_cand_filter` 节点）
+    -   所有标点符号直接上屏
+    -   特殊符号、字符输入（全拼<kbd>v</kbd>+首字母缩写；双拼<kbd>V</kbd>+首字母缩写）
+    -   拼音纠错（模糊音）
+    -   更多默认未启用的功能请参考 `rime.lua` 文件以及方案注释
 - 简体字表、词库
-    -   [《通用规范汉字表》](https://github.com/iDvel/The-Table-of-General-Standard-Chinese-Characters)
-    -   [华宇野风系统词库](http://bbs.pinyin.thunisoft.com/forum.php?mod=viewthread&tid=30049)（@野风）
-    -   [清华大学开源词库](https://github.com/thunlp/THUOCL)（@THUNLP | [MIT](https://github.com/thunlp/THUOCL/blob/master/LICENSE)）
-    -   [现代汉语常用词表](https://gist.github.com/indiejoseph/eae09c673460aa0b56db)（@Joseph cheng）
-    -   [腾讯词向量](https://ai.tencent.com/ailab/nlp/en/download.html)（@Tencent AI Lab | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)）
-    -   参考
-        -   《现代汉语词典》
-        -   《同义词词林》
-        -   《新华成语大词典》
+    -   [《通用规范汉字表》](https://github.com/iDvel/The-Table-of-General-Standard-Chinese-Characters) 8K 常用汉字
+    -   [Unihan 字库](https://www.unicode.org/Public/)（by Unicode lnc | [UNICODE LICENSE V3](https://www.unicode.org/Public/draft/UCD/ReadMe.txt)）40K 大字库， **默认未启用**
+    -   [华宇野风系统词库](http://bbs.pinyin.thunisoft.com/forum.php?mod=viewthread&tid=30049)（by 野风）
+    -   [简化字八股文](https://github.com/rime/rime-essay-simp)（by rime | [LGPL](https://github.com/rime/rime-essay-simp/blob/master/LICENSE)）
+    -   [清华大学开源词库](https://github.com/thunlp/THUOCL)（by THUNLP | [MIT](https://github.com/thunlp/THUOCL/blob/master/LICENSE)）
+    -   [现代汉语常用词表](https://gist.github.com/indiejoseph/eae09c673460aa0b56db)（by Joseph cheng）
+    -   [腾讯词向量](https://ai.tencent.com/ailab/nlp/en/download.html)（Huandeep [整理](https://github.com/iDvel/rime-ice/issues/24) | by Tencent AI Lab | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)）
 - 词库修订
     - 校对大量异形词、错别字、错误注音
     - 全词库完成注音
     - 同义多音字注音
+    - 参考
+      -   《现代汉语词典》
+      -   《同义词词林》
+      -   《新华成语大词典》
+      -   [校对标准论坛](http://www.jiaodui.com/bbs/)
+- Rime、Squirrel、Weasel 常用配置项的详尽注释
 
 <br>
 
@@ -268,7 +275,16 @@ patch:
 
 ## 感谢 ❤️
 
-感谢上述提到的词库、方案及功能参考。
+特别感谢上文已经提及的词库、词典的作者、贡献者及整理者；特别感谢以及下列词库、方案、脚本的作者及贡献者（提及的均为 GitHub id）：
+
+- @mozillazg 开发的汉字转拼音工具和数据库（MIT）
+- [melt_eng](https://github.com/tumuyan/rime-melt)（@tumuyan | [Apache 2.0](https://github.com/tumuyan/rime-melt/blob/master/LICENSE)） ：提供了部分（约 1000 条）英文词汇以及原始英文方案参考；
+- [部件拆字方案 v1](https://github.com/mirtlecn/rime-radical-pinyin)（@mirtlecn | [CC BY-SA 4.0](https://github.com/mirtlecn/rime-radical-pinyin/blob/master/LICENSE)）：提供的拆字反查，辅码插件；
+- [长词优先插件](https://github.com/tumuyan/rime-melt/blob/master/lua/melt.lua)（@tumuyan | [Apache 2.0](https://github.com/tumuyan/rime-melt/blob/master/LICENSE)）
+- [Unicode 插件](https://github.com/shewer/librime-lua-script/blob/main/lua/component/unicode.lua)（@shewer | [MIT](https://github.com/shewer/librime-lua-script/blob/main/lua/component/unicode.lua)）
+- [数字、人民币大写插件](https://github.com/yanhuacuo/98wubi/blob/master/lua/number.lua)（@98wubi）
+- [农历插件](https://github.com/boomker/rime-fast-xhup)（@boomker | [LGPL 3.0](https://github.com/boomker/rime-fast-xhup/blob/master/LICENSE)）
+- 未能在此处详述的、在本库源码注释中提及的项目及作者给予的帮助和参考
 
 感谢 [@Huandeep](https://github.com/Huandeep) 整理的多个词库。
 
@@ -276,9 +292,7 @@ patch:
 
 感谢所有贡献者。
 
-搜狗转 Rime：[lewangdev/scel2txt](https://github.com/lewangdev/scel2txt)
-
-大量参考 [校对标准论坛](http://www.jiaodui.com/bbs/)
+<!-- 搜狗转 Rime：[lewangdev/scel2txt](https://github.com/lewangdev/scel2txt) -->
 
 Thanks to JetBrains for the OSS development license.
 
