@@ -111,11 +111,11 @@ KDE桌面[Wayland](https://blog.merrkry.com/posts/2024-03-24-kde-fcitx5/)环境�
     -   更多默认未启用的功能请参考 `rime.lua` 文件以及方案注释
 - 简体字表、词库
     -   [《通用规范汉字表》](https://github.com/iDvel/The-Table-of-General-Standard-Chinese-Characters) 8K 常用汉字
-    -   [Unihan 字库](https://www.unicode.org/Public/)（by Unicode lnc | [UNICODE LICENSE V3](https://www.unicode.org/Public/draft/UCD/ReadMe.txt)）40K 大字库， **默认未启用**
-    -   [华宇野风系统词库](http://bbs.pinyin.thunisoft.com/forum.php?mod=viewthread&tid=30049)（by 野风）
+    -   [Unihan 字库](https://www.unicode.org/Public/)（by Unicode lnc | [UNICODE LICENSE V3](https://www.unicode.org/license.txt)）40K 大字库， **默认未启用**
+    -   [华宇野风词库](http://bbs.pinyin.thunisoft.com/forum.php?mod=viewthread&tid=30049)（by 野风）
     -   [简化字八股文](https://github.com/rime/rime-essay-simp)（by rime | [LGPL](https://github.com/rime/rime-essay-simp/blob/master/LICENSE)）
     -   [清华大学开源词库](https://github.com/thunlp/THUOCL)（by THUNLP | [MIT](https://github.com/thunlp/THUOCL/blob/master/LICENSE)）
-    -   [现代汉语常用词表](https://gist.github.com/indiejoseph/eae09c673460aa0b56db)（by Joseph cheng）
+    -   [现代汉语常用词表](https://zh.wikipedia.org/wiki/%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E5%B8%B8%E7%94%A8%E8%AF%8D%E8%A1%A8)（by 中国国家语言文字工作委员会）
     -   [腾讯词向量](https://ai.tencent.com/ailab/nlp/en/download.html)（Huandeep [整理](https://github.com/iDvel/rime-ice/issues/24) | by Tencent AI Lab | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/)）
 - 词库修订
     - 校对大量异形词、错别字、错误注音
